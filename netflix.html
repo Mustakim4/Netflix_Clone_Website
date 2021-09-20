@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>NETFLIX</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+	<style>
+		*{
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* background css start here*/
+	.bgImg{
+		width: 100%;
+		height: 650px;
+		position: relative;
+		transition: all 1s ease-in-out;
+	}
+
+	.bgOpacity{
+		position: relative;
+		filter: blur(5px);
+	}
+
+	/* netflix text css start here */
+	.netBig{
+		position: absolute;
+		z-index: 1;
+		top: 200px;
+		left: 330px;
+		font-size: 150px;
+		font-family: 'Bebas Neue', cursive;
+		letter-spacing: 30px;
+		color: red;
+	}
+
+	.netSmall{
+		color: red;
+		font-size: 45px;
+		z-index: 1;
+		position: absolute;
+		margin: 10px 30px;
+		font-family: 'Bebas Neue', cursive;
+		transition: all 3s ease-in-out;
+		text-shadow: 2px 2px white;
+	}
+
+	/* sign in btn css */
+	.btnSmall{
+		position: absolute;
+		z-index: 1;
+		right: 50px;
+		top: 10px;
+		color: white;
+		background-color: red;
+		padding: 5px 10px;
+		font-size: 15px;
+		border-radius: 3px;
+		border-style: none;
+	}
+
+	/* header text see what's next */
+
+	.new-text{
+		position: absolute;
+		z-index: 1;
+		color: white;
+		font-size: 5rem;
+	}
+
+	#h-what{
+		visibility: hidden;
+		top: 220px;
+		left: 20px;
+		font-size: 4rem;
+		font-weight: bold;
+	}
+
+	#p-watch{
+		visibility: hidden;
+		top: 300px;
+		left: 20px;
+		font-size: 2rem;
+	}
+
+	#btn-free{
+		visibility: hidden;
+		top: 360px;
+		left: 20px;
+		background-color: red;
+		font-size: 1rem;
+		padding: 5px 15px;
+		border-radius: 3px;
+		border-style: none;
+	}
+
+	@media screen and (max-width: 640px){
+		
+		#btn-free{
+			font-size: 1rem;
+			margin-top: 20px;
+		}
+	}
+
+	@media screen and (max-width: 480px){
+		#h-what{
+			font-size: 3rem;
+		}
+		#p-watch{
+			font-size: 2rem;
+			margin-bottom: 30px;
+		}
+		#btn-free{
+			font-size: 1rem;
+			margin-top: 20px;
+		}
+	}
+	</style>
+</head>
+<body>
+	
+	<section class="background">
+		<header id="netflixText" class="netBig">NETFLIX</header>
+		
+		<button id="btn" class="btnSmall">Sign In</button>
+	
+		<img src="dUyCkp.jpg" id="BGimage" class="bgImg bgOpacity">
+
+		<header id="h-what" class="new-text">See what's next.</header>
+
+		<p id="p-watch" class="new-text">WATCH ANYWHERE. CANCEL ANYTIME.</p><br>
+
+		<button id="btn-free" class="new-text">JOIN FREE FOR A MONTH</button>
+			
+		</div>
+	</section>
+
+	<script>
+		// background image
+
+		let BGimage = document.getElementById("BGimage");
+
+		setTimeout(()=>{
+			netflixText.classList.replace("netBig","netSmall");
+		}, 2000);
+
+		// netflix text
+
+		let netflixText = document.getElementById("netflixText");
+
+		setTimeout(()=>{
+			BGimage.classList.replace("bgOpacity","bgImg");	
+		}, 3000);
+
+		// sign in button
+
+		let signInBtn = document.getElementById("btn");
+
+		signInBtn.addEventListener('click',()=>{
+			alert("demo is working");
+		});
+
+		// new text javascript
+
+		let HWhat = document.getElementById("h-what");
+
+		let pTag = document.getElementById("p-watch");
+
+		let btnFree = document.getElementById("btn-free");
+
+		setTimeout(()=>{
+			HWhat.style.visibility = "visible";
+			pTag.style.visibility = "visible";
+			btnFree.style.visibility = "visible";
+		} , 5000);
+	</script>
+
+</body>
+</html>
